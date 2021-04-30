@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Music Player</title>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+        <!-- <script src="static/socket.io/node_modules/socket.io-client/socket.io.js"></script> -->
+        <!-- <script src="/node_modules/socket.io-client/socket.io.js"></script> -->
+    </head>
+    <body>
+        <!-- <form action="/filterMusic" method="GET"> -->
+        <div class="form">  
+                <table>
+                    <tr>
+                        <td><label for="artist">Artist: </label></td>
+                        <td><input type="text" placeholder="Enter the artist name" id="artist" name="artist" class="textbox"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="song">Song: </label></td>
+                        <td><input type="text" placeholder="Enter the song title" id="song" name="song" class="textbox"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="album">Album: </label></td>
+                        <td><input type="text" placeholder="Enter the album name" id="album" name="album" class="textbox"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="artist">Genre: </label></td>
+                        <td>
+                            <select name="genre" id="genre" class="select">
+                                <option value="">Select a genre</option>
+                                <option value="rock">Rock</option>
+                                <option value="pop">Pop</option>
+                                <option value="heavy metal">Heavy Metal</option>
+                                <option value="jazz">Jazz</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 10px;">
+                    <button id="search" class="form-btn" type="submit"><i class="fas fa-search"></i> Search</button>
+                    <button id="reset" class="form-btn"><i class="fas fa-undo"></i> Reset</button>
+                </div>
+        </div>
+        <!-- </form> -->
+
+        <!--Images-->
+        <div id="images">
+            <div id="images-background">
+            </div>
+        </div>
+
+        <!-- Modal content -->
+        <div id="modal-content">
+            <span id="close">&times;</span>
+            <p>Your files have been downloaded successfully!</p>
+        </div>
+
+        <!--Songs list-->
+        <div id="song-list">
+            <table id="songs" cellpadding='10px'>
+                <thead>
+                    <tr style="background-color: wheat;">
+                        <td>Artist</td>
+                        <td>Song</td>
+                        <td>Time</td>
+                        <td>Album</td>
+                        <td>Genre</td>
+                        <td>Rating</td>
+                        <td>Favourite</td>
+                        <td>Download</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
